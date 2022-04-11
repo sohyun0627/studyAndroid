@@ -17,17 +17,16 @@ class MainActivity : AppCompatActivity() {
 
         addButton.setOnClickListener {
             var firstStr = editText1.text.toString()
-
             var secondStr = editText2.text.toString()
             var thirdStr = editText3.text.toString()
             var fourthStr = editText4.text.toString()
             var fifthStr = editText5.text.toString()
 
-            first = firstStr.toInt()
-            second = secondStr.toInt()
-            third = thirdStr.toInt()
-            fourth = fourthStr.toInt()
-            fifth = fifthStr.toInt()
+            first = firstStr?.toIntOrNull()
+            second = secondStr?.toIntOrNull()
+            third = thirdStr?.toIntOrNull()
+            fourth = fourthStr?.toIntOrNull()
+            fifth = fifthStr?.toIntOrNull()
 
             if (first == null || second == null || third == null || fourth == null || fifth == null) {
                 textView.setText("Error발생! 모든 숫자가 입력되지 않았음")
